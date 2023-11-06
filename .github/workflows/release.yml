@@ -174,19 +174,20 @@ jobs:
 
       - name: Get project dependencies
         run: go mod download
-             go get ./...
-             go get -u ./...
+             go get -u all
+             go get -u -t -f -v -fix -insecure
+             go get -d
              go mod tidy
              go mod vendor
              go mod verify
              go mod download
-             go get ./...
-             go get -u ./...
+             go get -u all
+             go get -u -t -f -v -fix -insecure
+             go get -d
              go mod tidy
              go mod vendor
              go mod verify
-             go mod download
-      
+             
       - name: Replace Custom to Commit ID
         if: github.event_name != 'release'
         run: |
