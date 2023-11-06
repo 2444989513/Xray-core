@@ -173,7 +173,7 @@ jobs:
           check-latest: true
 
       - name: Get project dependencies
-        run: go mod download && go get -u all && go mod download
+        run: go mod download && go get -u github.com/gorilla/websocket@v1.5.1 && go mod download
              
              
       - name: Replace Custom to Commit ID
